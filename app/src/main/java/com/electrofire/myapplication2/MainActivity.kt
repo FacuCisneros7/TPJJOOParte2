@@ -1,11 +1,12 @@
 package com.electrofire.myapplication2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import repositories.UserRepository
+import com.electrofire.myapplication2.repositories.UserRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,15 +27,19 @@ class MainActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener{
 
-
             val contraseña = et_contraseña.text.toString()
             val usuario = et_usuario.text.toString()
             var usuarioActual = userRepo.login(usuario, contraseña)
 
             if(usuarioActual == null){
-               Toast.makeText(this,"Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
-            }else{
-                Toast.makeText(this,"Datos correctos", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Datos Correctos", Toast.LENGTH_SHORT).show()
+
+                val menuActivityIntent = Intent(this, MenuActivity::class.java)
+                menuActivityIntent.putExtra("usuarioActual", usuarioActual)
+                startActivity(menuActivityIntent)
+
             }
 
         }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/imagen"
+    tools:context=".MenuActivity">
+
+    <ImageButton
+        android:id="@+id/btn_comprar"
+        android:layout_width="242dp"
+        android:layout_height="255dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="comprar"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toTopOf="@+id/btn_medallero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/comprar" />
+
+    <ImageButton
+        android:id="@+id/btn_historial"
+        android:layout_width="242dp"
+        android:layout_height="257dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="historial"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toTopOf="@+id/btn_salir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.657"
+        app:srcCompat="@drawable/historial" />
+
+    <ImageButton
+        android:id="@+id/btn_medallero"
+        android:layout_width="242dp"
+        android:layout_height="257dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="medallero"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662"
+        app:srcCompat="@drawable/medallero" />
+
+    <ImageButton
+        android:id="@+id/btn_salir"
+        android:layout_width="244dp"
+        android:layout_height="257dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="salir"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/salir" />
+</androidx.constraintlayout.widget.ConstraintLayout>

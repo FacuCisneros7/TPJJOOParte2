@@ -1,6 +1,6 @@
-package repositories
+package com.electrofire.myapplication2.repositories
 
-import data.User
+import com.electrofire.myapplication2.data.User
 
 object UserRepository {
 
@@ -16,8 +16,7 @@ object UserRepository {
         return users.find { it.nickName == username && it.password == password}
     }
 
-    fun restarPrecioAlSaldo(usuario: User,precio: Double){
-        usuario.money -= precio
-    }
+    fun restarPrecioAlSaldo(usuario: User?, precio: Double){
+        usuario!!.money -= precio    }
 
 }

@@ -1,4 +1,4 @@
-package data
+package com.electrofire.myapplication2.data
 
 data class Country(
     val id: Long,

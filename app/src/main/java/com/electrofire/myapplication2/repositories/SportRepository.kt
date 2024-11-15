@@ -1,6 +1,6 @@
-package repositories
+package com.electrofire.myapplication2.repositories
 
-import data.Sport
+import com.electrofire.myapplication2.data.Sport
 
 object SportRepository {
 

@@ -1,6 +1,6 @@
-package repositories
+package com.electrofire.myapplication2.repositories
 
-import data.Event
+import com.electrofire.myapplication2.data.Event
 
 object EventRepository {
 

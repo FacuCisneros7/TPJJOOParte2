@@ -1,4 +1,4 @@
-package data
+package com.electrofire.myapplication2.data
 
 abstract class Intermediario {
 

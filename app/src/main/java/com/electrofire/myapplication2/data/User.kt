@@ -1,6 +1,8 @@
-package data
+package com.electrofire.myapplication2.data
 
-data class User(
+import java.io.Serializable
+
+data class User (
     val id: Long,
     val nickName: String,
     val password: String,
@@ -8,6 +10,5 @@ data class User(
     val surname: String,
     var money: Double,
     val createdDate: String
+) : Serializable
 
-
-)

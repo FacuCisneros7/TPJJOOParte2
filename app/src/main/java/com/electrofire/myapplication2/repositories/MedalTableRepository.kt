@@ -1,6 +1,6 @@
-package repositories
+package com.electrofire.myapplication2.repositories
 
-import data.Country
+import com.electrofire.myapplication2.data.Country
 
 object MedalTableRepository {
 

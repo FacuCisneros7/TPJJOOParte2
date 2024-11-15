@@ -1,8 +1,14 @@
-import data.*
-import repositories.EventRepository
-import repositories.MedalTableRepository
-import repositories.PurchaseRepository
-import repositories.UserRepository
+import android.util.Log
+import com.electrofire.myapplication2.data.Elite
+import com.electrofire.myapplication2.data.Event
+import com.electrofire.myapplication2.data.Purchase
+import com.electrofire.myapplication2.data.TicketPro
+import com.electrofire.myapplication2.data.UltimateEvent
+import com.electrofire.myapplication2.data.User
+import com.electrofire.myapplication2.repositories.EventRepository
+import com.electrofire.myapplication2.repositories.MedalTableRepository
+import com.electrofire.myapplication2.repositories.PurchaseRepository
+import com.electrofire.myapplication2.repositories.UserRepository
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -136,7 +142,7 @@ fun seleccionarIntermediario(): Int{
     return indice
 }
 
-fun seleccionarEvento(eventoRepo: EventRepository): Event{
+fun seleccionarEvento(eventoRepo: EventRepository): Event {
     println("Eventos disponibles: ")
     println(eventoRepo.get())
 
@@ -197,12 +203,46 @@ fun confirmarCompra(): Boolean {
     return opcionSeleccionada2 == 0
 }
 
-fun registrarCompra(usuario: User, evento: Event, precio: Double, fecha: String, asiento: String, purchaseRepo: PurchaseRepository): Purchase {
+
+
+fun registrarCompra(
+    usuario: User?,
+    evento: Event?,
+    precio: Double,
+    fecha: String?,
+    asiento: String?,
+    purchaseRepo: PurchaseRepository
+): Purchase? {
+
+    if (usuario == null) {
+        Log.e("RegistrarCompra", "El usuario no puede ser nulo")
+        return null
+    }
+
+    if (evento == null) {
+        Log.e("RegistrarCompra", "El evento no puede ser nulo")
+        return null // O lanzar una excepción
+    }
+
+    val fechaFinal = fecha ?: "Fecha no disponible"
+    val asientoFinal = asiento ?: "Asiento no asignado"
+
     val lastId = purchaseRepo.get().maxOfOrNull { it.id } ?: 0
-    val nuevaCompra = Purchase(lastId + 1, usuario.id, evento.id, precio, fecha, asiento)
+
+    val nuevaCompra = Purchase(
+        lastId + 1,
+        usuario.id,
+        evento.id,
+        precio,
+        fechaFinal,
+        asientoFinal
+    )
+
     purchaseRepo.add(nuevaCompra)
+
     return nuevaCompra
 }
+
 
 fun mostrarHistorialDeCompras(usuarioActual: User, purchaseRepo: PurchaseRepository){
 

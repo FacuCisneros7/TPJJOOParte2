@@ -1,4 +1,4 @@
-package data
+package com.electrofire.myapplication2.data
 
 import java.time.DayOfWeek
 import java.time.LocalDate
