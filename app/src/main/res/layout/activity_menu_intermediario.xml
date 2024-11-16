@@ -12,11 +12,10 @@
         android:id="@+id/btn_elite"
         android:layout_width="224dp"
         android:layout_height="229dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="elite"
         android:scaleType="fitEnd"
-        app:layout_constraintBottom_toTopOf="@+id/btn_ticketpro"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_ultimate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,21 +27,21 @@
         android:id="@+id/btn_ticketpro"
         android:layout_width="223dp"
         android:layout_height="227dp"
-        android:layout_marginBottom="4dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="ticket"
         android:scaleType="fitEnd"
-        app:layout_constraintBottom_toTopOf="@+id/btn_ultimate"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ticketpro" />
 
     <ImageButton
         android:id="@+id/btn_ultimate"
         android:layout_width="223dp"
         android:layout_height="231dp"
-        android:layout_marginBottom="16dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="ultimate"
         android:scaleType="fitEnd"
@@ -50,38 +49,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ultimate" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="167dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="24dp"
         android:text="Comision del 2%"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="173dp"
-        android:layout_height="187dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="172dp"
+        android:layout_height="112dp"
         android:layout_marginBottom="44dp"
         android:text="Si la compra se realiza entre las 20:00 hs y las 23:59 hs aplica una comisión del 1%, sino aplica una comisión del 3%"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="172dp"
         android:layout_height="144dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="32dp"
         android:text="Si la compra se realiza un sábado o domingo se aplica una comisión del 3%, sino aplica unacomisión del 0.75%"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

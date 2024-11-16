@@ -26,12 +26,12 @@ class asientoActivity : AppCompatActivity() {
         btn_asientoDisponible = findViewById(R.id.btn_asientoDisponible)
         et_asiento = findViewById(R.id.et_asiento)
 
-        val intermediario = intent.getStringExtra("intermediarioElegido")
+        val intermediario = intent.getIntExtra("selectedIntermediary", -1)
         val usuarioActual = intent.getSerializableExtra("usuarioActual") as? User
 
         val place = intent.getStringExtra("lugarDelEvento")
         val hour = intent.getStringExtra("horaDelEvento")
-        val price = intent.getStringExtra("precioDelEvento")
+        val price = intent.getDoubleExtra("precioDelEvento", 0.0)
         val date = intent.getStringExtra("diaDelEvento")
         val id = intent.getLongExtra("idDelEvento", -1)
 
@@ -46,7 +46,7 @@ class asientoActivity : AppCompatActivity() {
                 val realizarCompraIntent = Intent(this, RealizarCompraActivity::class.java)
 
                 realizarCompraIntent.putExtra("usuarioActual", usuarioActual)
-                realizarCompraIntent.putExtra("intermediarioElegido", intermediario)
+                realizarCompraIntent.putExtra("selectedIntermediary", intermediario)
                 realizarCompraIntent.putExtra("diaDelEvento", date)
                 realizarCompraIntent.putExtra("lugarDelEvento", place)
                 realizarCompraIntent.putExtra("horaDelEvento", hour)

@@ -29,7 +29,7 @@ class choiseEventActivity : AppCompatActivity() {
     private fun setUpRecyclerView(){
 
         val selectEventClickLister = { event: Event ->
-            val intermediarioOpcionElegida = intent.getIntExtra("SELECTED_INTERMEDIARY_INDEX", -1)
+            val intermediarioOpcionElegida = intent.getIntExtra("selectedIntermediary", -1)
             val usuarioActual = intent.getSerializableExtra("usuarioActual") as? User
 
             Toast.makeText(this, "Seleccionaste al evento en ${event.place}, el dia ${event.date}", Toast.LENGTH_SHORT).show()
@@ -37,7 +37,7 @@ class choiseEventActivity : AppCompatActivity() {
             val asientoDisponibleIntent = Intent(this, asientoActivity::class.java)
 
             asientoDisponibleIntent.putExtra("usuarioActual", usuarioActual)
-            asientoDisponibleIntent.putExtra("intermediarioElegido", intermediarioOpcionElegida)
+            asientoDisponibleIntent.putExtra("selectedIntermediary", intermediarioOpcionElegida)
             asientoDisponibleIntent.putExtra("diaDelEvento", event.date)
             asientoDisponibleIntent.putExtra("lugarDelEvento", event.place)
             asientoDisponibleIntent.putExtra("horaDelEvento", event.hour)

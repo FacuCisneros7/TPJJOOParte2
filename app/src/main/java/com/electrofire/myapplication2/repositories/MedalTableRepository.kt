@@ -84,7 +84,7 @@ object MedalTableRepository {
                 7L,
                 7,
                 "Francia",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg/1200px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
                 18,
                 15,
                 14

@@ -16,7 +16,7 @@ object UserRepository {
         return users.find { it.nickName == username && it.password == password}
     }
 
-    fun restarPrecioAlSaldo(usuario: User?, precio: Double){
-        usuario!!.money -= precio    }
+    fun restarPrecioAlSaldo(usuario: User, precio: Double){
+        usuario.money -= precio    }
 
 }

@@ -36,15 +36,23 @@ class MenuActivity : AppCompatActivity() {
 
         btn_historial.setOnClickListener {
 
+            val historialActivityIntent = Intent(this, HistorialActivity::class.java)
+            historialActivityIntent.putExtra("usuarioActual", usuarioActual)
+            startActivity(historialActivityIntent)
+
         }
 
         btn_medallero.setOnClickListener {
+
+            val medalleroActivityIntent = Intent(this, MedalleroActivity::class.java)
+            startActivity(medalleroActivityIntent)
 
         }
 
         btn_salir.setOnClickListener {
             val mainActivityIntent = Intent(this, MainActivity::class.java)
             startActivity(mainActivityIntent)
+            finish()
         }
 
     }

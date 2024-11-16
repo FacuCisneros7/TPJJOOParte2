@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card"
+        android:id="@+id/card_compra"
         android:layout_width="408dp"
         android:layout_height="107dp"
         android:layout_margin="8dp"
@@ -24,52 +24,37 @@
             android:padding="8dp">
 
             <TextView
-                android:id="@+id/date"
-                android:layout_width="133dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="date"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
-
-            <TextView
-                android:id="@+id/hour"
-                android:layout_width="133dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="hour"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
-
-            <TextView
-                android:id="@+id/place"
+                android:id="@+id/id_compra"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="place"
+                android:text="id compra"
                 android:textColor="#000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
+                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.115" />
+
+            <TextView
+                android:id="@+id/created_compra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="created date"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.492" />
 
             <ImageView
-                android:id="@+id/imageViewBandera"
+                android:id="@+id/imageView2_compra"
                 android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="img"
@@ -79,17 +64,17 @@
                 app:srcCompat="@drawable/paris" />
 
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/amount_compra"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="price"
+                android:text="amount"
                 android:textColor="#000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
+                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.884" />
 
