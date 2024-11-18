@@ -24,6 +24,14 @@ class MenuIntermediarioActivity : AppCompatActivity() {
         btn_ultimate = findViewById(R.id.btn_ultimate)
 
 
+        btn_ticketpro.setOnClickListener {
+            val ticketProActivityIntent = Intent(this, choiseEventActivity::class.java)
+            ticketProActivityIntent.putExtra("selectedIntermediary", 0)
+            ticketProActivityIntent.putExtra("usuarioActual", usuarioActual)
+            startActivity(ticketProActivityIntent)
+
+        }
+
         btn_elite.setOnClickListener{
             val eliteActivityIntent = Intent(this, choiseEventActivity::class.java)
             eliteActivityIntent.putExtra("selectedIntermediary", 1)
@@ -32,13 +40,6 @@ class MenuIntermediarioActivity : AppCompatActivity() {
 
         }
 
-        btn_ticketpro.setOnClickListener {
-            val ticketProActivityIntent = Intent(this, choiseEventActivity::class.java)
-            ticketProActivityIntent.putExtra("selectedIntermediary", 0)
-            ticketProActivityIntent.putExtra("usuarioActual", usuarioActual)
-            startActivity(ticketProActivityIntent)
-
-        }
 
         btn_ultimate.setOnClickListener {
             val ultimateActivityIntent = Intent(this, choiseEventActivity::class.java)

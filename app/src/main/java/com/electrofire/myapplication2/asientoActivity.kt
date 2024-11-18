@@ -40,24 +40,30 @@ class asientoActivity : AppCompatActivity() {
 
             val asiento = et_asiento.text.toString()
 
-            if(purchaseRepo.estaOcupado(id, asiento) == false){
-                Toast.makeText(this, "Asiento valido", Toast.LENGTH_SHORT).show()
+            if(asiento.isEmpty()) {
 
-                val realizarCompraIntent = Intent(this, RealizarCompraActivity::class.java)
+                Toast.makeText(this, "Ingrese un asiento", Toast.LENGTH_SHORT).show()
 
-                realizarCompraIntent.putExtra("usuarioActual", usuarioActual)
-                realizarCompraIntent.putExtra("selectedIntermediary", intermediario)
-                realizarCompraIntent.putExtra("diaDelEvento", date)
-                realizarCompraIntent.putExtra("lugarDelEvento", place)
-                realizarCompraIntent.putExtra("horaDelEvento", hour)
-                realizarCompraIntent.putExtra("precioDelEvento", price)
-                realizarCompraIntent.putExtra("idDelEvento", id)
-                realizarCompraIntent.putExtra("asientoDelEvento", asiento)
+            }else{
+                if (purchaseRepo.estaOcupado(id, asiento) == false) {
+                    Toast.makeText(this, "Asiento valido", Toast.LENGTH_SHORT).show()
 
-                startActivity(realizarCompraIntent)
+                    val realizarCompraIntent = Intent(this, RealizarCompraActivity::class.java)
 
-            } else{
-                Toast.makeText(this, "Asiento ocupado", Toast.LENGTH_SHORT).show()
+                    realizarCompraIntent.putExtra("usuarioActual", usuarioActual)
+                    realizarCompraIntent.putExtra("selectedIntermediary", intermediario)
+                    realizarCompraIntent.putExtra("diaDelEvento", date)
+                    realizarCompraIntent.putExtra("lugarDelEvento", place)
+                    realizarCompraIntent.putExtra("horaDelEvento", hour)
+                    realizarCompraIntent.putExtra("precioDelEvento", price)
+                    realizarCompraIntent.putExtra("idDelEvento", id)
+                    realizarCompraIntent.putExtra("asientoDelEvento", asiento)
+
+                    startActivity(realizarCompraIntent)
+
+                } else {
+                    Toast.makeText(this, "Asiento ocupado", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
