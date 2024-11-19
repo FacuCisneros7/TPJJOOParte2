@@ -22,6 +22,7 @@ class RealizarCompraActivity : AppCompatActivity() {
     private lateinit var et_place : TextView
     private lateinit var et_date : TextView
     private lateinit var et_price : TextView
+    private lateinit var et_sport : TextView
 
     val eventRepo = EventRepository
     val purchaseRepo = PurchaseRepository
@@ -39,26 +40,32 @@ class RealizarCompraActivity : AppCompatActivity() {
         et_date = findViewById(R.id.et_date)
         et_price = findViewById(R.id.et_price)
         btn_confirmar = findViewById(R.id.btn_confirmar)
+        et_sport = findViewById(R.id.et_sport)
 
         val intermediario = intent.getIntExtra("selectedIntermediary", -1)
         val usuarioActual = intent.getSerializableExtra("usuarioActual") as? User
-
-        val place = intent.getStringExtra("lugarDelEvento")
-        val hour = intent.getStringExtra("horaDelEvento")
-        val price = intent.getDoubleExtra("precioDelEvento",0.0)
-        val date = intent.getStringExtra("diaDelEvento")
-        val id = intent.getLongExtra("idDelEvento", -1)
         val asiento = intent.getStringExtra("asientoDelEvento")
+        val id = intent.getLongExtra("idDelEvento", -1)
+
+        val eventoActual = eventRepo.getById(id)
+
+        val place = eventoActual!!.place
+        val hour = eventoActual.hour
+        val price = eventoActual.price
+        val date = eventoActual.date
+        val sport = eventoActual.sport.name
+
 
         et_place.setText(place)
         et_hour.setText(hour)
         et_date.setText(date)
+        et_sport.setText(sport)
+
         val precioFinal = calcularPrecioFinal(intermediario,price)
         et_price.setText(precioFinal.toString())
 
-        btn_confirmar.setOnClickListener {
 
-            val eventoActual = eventRepo.getById(id)
+        btn_confirmar.setOnClickListener {
 
             if ((usuarioActual?.money ?: 0.0) > precioFinal) {
 
@@ -72,7 +79,7 @@ class RealizarCompraActivity : AppCompatActivity() {
                     startActivity(menuActivityIntent)
 
                 } else{
-                    Toast.makeText(this, "Saldo Insuficiente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Compra rechazada: Saldo Insuficiente", Toast.LENGTH_SHORT).show()
 
                     val menuActivityIntent = Intent(this, MenuActivity::class.java)
                     menuActivityIntent.putExtra("usuarioActual", usuarioActual)

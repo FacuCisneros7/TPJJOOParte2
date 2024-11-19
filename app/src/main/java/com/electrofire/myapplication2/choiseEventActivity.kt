@@ -22,6 +22,8 @@ class choiseEventActivity : AppCompatActivity() {
         binding = ActivityChoiseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         setUpRecyclerView()
 
     }
@@ -29,6 +31,7 @@ class choiseEventActivity : AppCompatActivity() {
     private fun setUpRecyclerView(){
 
         val selectEventClickLister = { event: Event ->
+            val asiento = intent.getStringExtra("asientoDelEvento")
             val intermediarioOpcionElegida = intent.getIntExtra("selectedIntermediary", -1)
             val usuarioActual = intent.getSerializableExtra("usuarioActual") as? User
 
@@ -38,10 +41,7 @@ class choiseEventActivity : AppCompatActivity() {
 
             asientoDisponibleIntent.putExtra("usuarioActual", usuarioActual)
             asientoDisponibleIntent.putExtra("selectedIntermediary", intermediarioOpcionElegida)
-            asientoDisponibleIntent.putExtra("diaDelEvento", event.date)
-            asientoDisponibleIntent.putExtra("lugarDelEvento", event.place)
-            asientoDisponibleIntent.putExtra("horaDelEvento", event.hour)
-            asientoDisponibleIntent.putExtra("precioDelEvento", event.price)
+            asientoDisponibleIntent.putExtra("asientoDelEvento", asiento)
             asientoDisponibleIntent.putExtra("idDelEvento", event.id)
 
             startActivity(asientoDisponibleIntent)

@@ -26,6 +26,7 @@ class EventAdapter(private val events: List<Event>, private val selectEventClick
         holder.binding.price.text = event.price.toString()
         holder.binding.hour.text = event.hour
         holder.binding.place.text = event.place
+        holder.binding.deporte.text = event.sport.name
 
         holder.binding.card.setOnClickListener{
             selectEventClickLister(event)
