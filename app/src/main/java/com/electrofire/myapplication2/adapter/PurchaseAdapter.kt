@@ -25,7 +25,7 @@ class PurchaseAdapter(private val purchases: List<Purchase>, private val selectP
         holder.binding.createdCompra.text = purchase.createdDate
         holder.binding.amountCompra.text = purchase.amount.toString()
         holder.binding.idCompra.text = purchase.id.toString()
-
+        holder.binding.asiento.text = purchase.seat
 
         holder.binding.cardCompra.setOnClickListener{
             selectPurchaseClickLister(purchase)

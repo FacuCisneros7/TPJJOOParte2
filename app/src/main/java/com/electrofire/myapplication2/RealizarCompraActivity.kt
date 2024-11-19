@@ -1,8 +1,12 @@
 package com.electrofire.myapplication2
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -70,24 +74,40 @@ class RealizarCompraActivity : AppCompatActivity() {
             if ((usuarioActual?.money ?: 0.0) > precioFinal) {
 
                     registrarCompra(usuarioActual, eventoActual, precioFinal, createdDate, asiento, purchaseRepo)
-
                     userRepo.restarPrecioAlSaldo(usuarioActual!!,precioFinal)
 
-                    Toast.makeText(this, "Compra realizada correctamente", Toast.LENGTH_SHORT).show()
-                    val menuActivityIntent = Intent(this, MenuActivity::class.java)
-                    menuActivityIntent.putExtra("usuarioActual", usuarioActual)
-                    startActivity(menuActivityIntent)
+                    mostrarImagen(R.drawable.compraexitosa){
+                        val menuActivityIntent = Intent(this, MenuActivity::class.java)
+                        menuActivityIntent.putExtra("usuarioActual", usuarioActual)
+                        startActivity(menuActivityIntent)
+                    }
 
                 } else{
-                    Toast.makeText(this, "Compra rechazada: Saldo Insuficiente", Toast.LENGTH_SHORT).show()
 
-                    val menuActivityIntent = Intent(this, MenuActivity::class.java)
-                    menuActivityIntent.putExtra("usuarioActual", usuarioActual)
-                    startActivity(menuActivityIntent)
+                    mostrarImagen(R.drawable.comprarechazada){
+                        val menuActivityIntent = Intent(this, MenuActivity::class.java)
+                        menuActivityIntent.putExtra("usuarioActual", usuarioActual)
+                        startActivity(menuActivityIntent)
+                    }
+
                 }
 
         }
 
+    }
+
+    private fun mostrarImagen(imagenResId: Int, onDismiss: () -> Unit) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_imagen)
+        dialog.findViewById<ImageView>(R.id.ivResultado).setImageResource(imagenResId)
+        dialog.setCancelable(true)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+            onDismiss()
+        }, 2000)
     }
 
 }
