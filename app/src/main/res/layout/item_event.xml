@@ -8,11 +8,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
-        android:layout_width="408dp"
+        android:layout_width="370dp"
         android:layout_height="107dp"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#B6DCFE"
+        app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
 
             <TextView
                 android:id="@+id/hour"
-                android:layout_width="133dp"
+                android:layout_width="103dp"
                 android:layout_height="22dp"
                 android:layout_marginStart="8dp"
                 android:text="hour"
@@ -91,7 +91,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/paris" />
+                app:srcCompat="@drawable/parisbrillo" />
 
             <TextView
                 android:id="@+id/price"
@@ -103,7 +103,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.173"
+                app:layout_constraintHorizontal_bias="0.387"
                 app:layout_constraintStart_toEndOf="@id/imageViewBandera"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.884" />

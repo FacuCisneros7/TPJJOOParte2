@@ -80,6 +80,7 @@ class RealizarCompraActivity : AppCompatActivity() {
                         val menuActivityIntent = Intent(this, MenuActivity::class.java)
                         menuActivityIntent.putExtra("usuarioActual", usuarioActual)
                         startActivity(menuActivityIntent)
+                        finish()
                     }
 
                 } else{
@@ -88,6 +89,7 @@ class RealizarCompraActivity : AppCompatActivity() {
                         val menuActivityIntent = Intent(this, MenuActivity::class.java)
                         menuActivityIntent.putExtra("usuarioActual", usuarioActual)
                         startActivity(menuActivityIntent)
+                        finish()
                     }
 
                 }

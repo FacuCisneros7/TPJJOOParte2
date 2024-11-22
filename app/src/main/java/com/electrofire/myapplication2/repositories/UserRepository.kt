@@ -17,6 +17,6 @@ object UserRepository {
     }
 
     fun restarPrecioAlSaldo(usuario: User, precio: Double){
-        usuario.money -= precio    }
+        usuario.money = usuario.money.minus(precio) }
 
 }
