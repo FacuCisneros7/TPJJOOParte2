@@ -22,6 +22,26 @@
             android:layout_height="match_parent"
             android:padding="8dp">
 
+            <ImageView
+                android:id="@+id/imageView2_compra"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/parisbrillo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="243dp"
+            android:layout_height="85dp"
+            android:background="@drawable/borde_items"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:id="@+id/asiento2"
                 android:layout_width="80dp"
@@ -32,25 +52,24 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.801"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintHorizontal_bias="0.767"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
+                app:layout_constraintVertical_bias="0.111" />
 
             <TextView
                 android:id="@+id/asiento"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:text="nro"
                 android:textColor="#000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toStartOf="@+id/id"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
+                app:layout_constraintVertical_bias="0.111" />
 
             <TextView
                 android:id="@+id/price3"
@@ -62,10 +81,10 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.436"
+                app:layout_constraintHorizontal_bias="0.006"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.884" />
+                app:layout_constraintVertical_bias="0.888" />
 
             <TextView
                 android:id="@+id/id_compra"
@@ -78,7 +97,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.156"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.115" />
 
@@ -93,7 +112,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.005"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.115" />
 
@@ -101,20 +120,19 @@
                 android:id="@+id/created_compra"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:text="created date"
                 android:textColor="#000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.613"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintHorizontal_bias="0.586"
+                app:layout_constraintStart_toStartOf="@+id/created_compra2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.492" />
 
             <TextView
                 android:id="@+id/created_compra2"
-                android:layout_width="130dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="FECHA:"
@@ -123,19 +141,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.007"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
-
-            <ImageView
-                android:id="@+id/imageView2_compra"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:contentDescription="img"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/parisbrillo" />
+                app:layout_constraintVertical_bias="0.492" />
 
             <TextView
                 android:id="@+id/amount_compra"
@@ -147,10 +155,13 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.734"
-                app:layout_constraintStart_toEndOf="@id/imageView2_compra"
+                app:layout_constraintHorizontal_bias="0.692"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.884" />
+                app:layout_constraintVertical_bias="0.888" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

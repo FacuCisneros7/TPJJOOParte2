@@ -23,66 +23,6 @@
             android:layout_height="match_parent"
             android:padding="8dp">
 
-            <TextView
-                android:id="@+id/place"
-                android:layout_width="133dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="place"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="133dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="date"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
-
-            <TextView
-                android:id="@+id/hour"
-                android:layout_width="103dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="hour"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.115" />
-
-            <TextView
-                android:id="@+id/deporte"
-                android:layout_width="133dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:text="sport"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.492" />
-
             <ImageView
                 android:id="@+id/imageViewBandera"
                 android:layout_width="115dp"
@@ -93,35 +33,106 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/parisbrillo" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="price"
-                android:textColor="#000"
-                android:textSize="16sp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="243dp"
+                android:layout_height="85dp"
+                android:background="@drawable/borde_items"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.387"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.884" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/price2"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="$"
-                android:textColor="#000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/imageViewBandera"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.884" />
+                <TextView
+                    android:id="@+id/place"
+                    android:layout_width="133dp"
+                    android:layout_height="22dp"
+                    android:text="place"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.492" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="133dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8dp"
+                    android:text="date"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.142" />
+
+                <TextView
+                    android:id="@+id/hour"
+                    android:layout_width="103dp"
+                    android:layout_height="22dp"
+                    android:text="hour"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.142" />
+
+                <TextView
+                    android:id="@+id/deporte"
+                    android:layout_width="133dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8dp"
+                    android:text="sport"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.492" />
+
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="price"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.387"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.884" />
+
+                <TextView
+                    android:id="@+id/price2"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="$"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.884" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
