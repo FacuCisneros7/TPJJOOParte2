@@ -1,16 +1,12 @@
-import android.util.Log
-import com.electrofire.myapplication2.data.Elite
+import com.electrofire.myapplication2.calcularPrecioFinal
 import com.electrofire.myapplication2.data.Event
-import com.electrofire.myapplication2.data.Purchase
-import com.electrofire.myapplication2.data.TicketPro
-import com.electrofire.myapplication2.data.UltimateEvent
 import com.electrofire.myapplication2.data.User
+import com.electrofire.myapplication2.registrarCompra
 import com.electrofire.myapplication2.repositories.EventRepository
 import com.electrofire.myapplication2.repositories.MedalTableRepository
 import com.electrofire.myapplication2.repositories.PurchaseRepository
 import com.electrofire.myapplication2.repositories.UserRepository
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 fun main(args: Array<String>) {
@@ -176,24 +172,6 @@ fun seleccionarAsiento(idEvento: Long, purchaseRepo: PurchaseRepository): String
 
 }
 
-fun calcularPrecioFinal(indice: Int, precioBase: Double): Double{
-    return when (indice) {
-        0 -> {
-            TicketPro().calcularComision(precioBase)
-        }
-
-        1 -> {
-            Elite().calcularComision(precioBase)
-        }
-
-        2 -> {
-            UltimateEvent().calcularComision(precioBase)
-        }
-        else -> 0.0
-    }
-
-}
-
 fun confirmarCompra(): Boolean {
     println("Desea realizar la compra?:")
     println("0- Si")
@@ -202,47 +180,6 @@ fun confirmarCompra(): Boolean {
     val opcionSeleccionada2 = readln().toInt()
     return opcionSeleccionada2 == 0
 }
-
-
-
-fun registrarCompra(
-    usuario: User?,
-    evento: Event?,
-    precio: Double,
-    fecha: String?,
-    asiento: String?,
-    purchaseRepo: PurchaseRepository
-): Purchase? {
-
-    if (usuario == null) {
-        Log.e("RegistrarCompra", "El usuario no puede ser nulo")
-        return null
-    }
-
-    if (evento == null) {
-        Log.e("RegistrarCompra", "El evento no puede ser nulo")
-        return null // O lanzar una excepción
-    }
-
-    val fechaFinal = fecha ?: "Fecha no disponible"
-    val asientoFinal = asiento ?: "Asiento no asignado"
-
-    val lastId = purchaseRepo.get().maxOfOrNull { it.id } ?: 0
-
-    val nuevaCompra = Purchase(
-        lastId + 1,
-        usuario.id,
-        evento.id,
-        precio,
-        fechaFinal,
-        asientoFinal
-    )
-
-    purchaseRepo.add(nuevaCompra)
-
-    return nuevaCompra
-}
-
 
 fun mostrarHistorialDeCompras(usuarioActual: User, purchaseRepo: PurchaseRepository){
 
